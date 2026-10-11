@@ -13,3 +13,5 @@
 .last-result-success .eyebrow,.last-result-success .scan-result p,.last-result-success .scan-result svg{color:#166534}
 .last-result-success .badge{background:#166534;color:#fff}
 .scan-footer{flex-wrap:wrap;gap:10px}
+
+.field textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--text);font:inherit;resize:vertical}.message-preview{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;padding:12px;background:var(--soft);border-radius:9px}

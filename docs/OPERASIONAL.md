@@ -1,3 +1,5 @@
+> Versi 2.0.2: baca UPGRADE_2.0.2.md terlebih dahulu. Panduan itu menggantikan petunjuk lama terkait reset, suara, template pesan dan otomasi.
+
 # Panduan admin dan guru
 
 ## Peran
@@ -81,7 +83,7 @@ Kartu per siswa atau 25 siswa yang tampil dapat dicetak. Pada dialog print gunak
 A4, skala 100%; periksa satu kartu fisik sebelum mencetak banyak. Guru mendapatkan
 hasil hanya setelah server mengonfirmasi penyimpanan. Tidak ada antrean offline.
 
-Pada scanner, ketuk Aktifkan suara sekali. Presensi baru yang berhasil tersimpan membunyikan dua nada dan mengubah kotak HASIL TERAKHIR menjadi hijau.
+Suara disiapkan otomatis melalui interaksi login/menu, tanpa tombol aktivasi khusus. Presensi baru yang berhasil tersimpan membunyikan dua nada dan mengubah kotak HASIL TERAKHIR menjadi hijau.
 
 ## WhatsApp
 

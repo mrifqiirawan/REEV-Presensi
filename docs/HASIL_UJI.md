@@ -1,4 +1,4 @@
-# Status verifikasi versi 2.0.1
+# Status verifikasi versi 2.0.2
 
 Sesuai permintaan pengguna, tidak dilakukan pengujian aplikasi atau instalasi dependensi. Tidak ada klaim lulus build atau integrasi.
 
@@ -12,4 +12,4 @@ Sesuai permintaan pengguna, tidak dilakukan pengujian aplikasi atau instalasi de
 | Scheduler hosted, deploy Vercel | NOT_RUN |
 | Integritas arsip distribusi | Diperiksa saat pengemasan |
 
-HASIL_UJI_2.0.0_HISTORIS.md berasal dari paket masukan. Hasil tersebut bukan bukti pengujian versi 2.0.1. Fixture pengujian lama disesuaikan dengan RPC baru tetapi tidak dijalankan.
+HASIL_UJI_2.0.0_HISTORIS.md berasal dari paket masukan. Hasil tersebut bukan bukti pengujian versi 2.0.2. Pengujian bawaan berasal dari versi sebelumnya dan tidak dijalankan untuk fitur baru.

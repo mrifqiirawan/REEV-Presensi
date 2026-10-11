@@ -1,3 +1,5 @@
+> Versi 2.0.2: baca UPGRADE_2.0.2.md terlebih dahulu. Panduan itu menggantikan petunjuk lama terkait reset, suara, template pesan dan otomasi.
+
 > Versi 2.0.1: untuk database lama, ikuti UPGRADE_2.0.1.md. Instalasi baru wajib menjalankan 003 setelah 001, sebelum mengaktifkan aplikasi.
 
 # Panduan pemasangan dari nol
