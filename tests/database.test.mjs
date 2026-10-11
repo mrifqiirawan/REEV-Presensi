@@ -7,6 +7,7 @@ test('Database: RLS, duplicate attendance, QR status, WA limits, backup/reset/re
  const db=new PGlite();
  await db.exec(`create role anon;create role authenticated;create role service_role bypassrls;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;grant usage on schema auth to authenticated,service_role;grant execute on function auth.uid() to authenticated,service_role;`);
  await db.exec(await readFile(new URL('../supabase/001_schema.sql',import.meta.url),'utf8'));
+ await db.exec(await readFile(new URL('../supabase/003_upgrade_v2_0_1.sql',import.meta.url),'utf8'));
  await db.exec(`insert into auth.users values('${ADMIN}'),('${TEACHER}');insert into profiles(id,username,name,role) values('${ADMIN}','admin','Admin','ADMIN'),('${TEACHER}','guru','Guru','GURU');`);
  const term=(await db.query("insert into terms(year,name) values('2026/2027','Ganjil') returning id")).rows[0].id;
  const cls=(await db.query("insert into classes(name,term_id,teacher_id) values('9C',$1,$2) returning id",[term,TEACHER])).rows[0].id;

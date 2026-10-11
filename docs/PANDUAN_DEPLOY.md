@@ -1,3 +1,5 @@
+> Versi 2.0.1: untuk database lama, ikuti UPGRADE_2.0.1.md. Instalasi baru wajib menjalankan 003 setelah 001, sebelum mengaktifkan aplikasi.
+
 # Panduan pemasangan dari nol
 
 ## 1. Siapkan Supabase
@@ -126,7 +128,7 @@ Pengiriman nyata tidak dilakukan oleh pembuat paket ini.
 5. Periksa Cron → Jobs → History dan hasil HTTP. Respon 401 berarti secret salah;
    HTML sign-in dapat berarti deployment protection Vercel menghalangi scheduler.
    Gunakan URL produksi yang dapat diakses oleh scheduler; login aplikasi tetap wajib.
-6. Cron berjalan setiap menit. Pembatas database tetap dapat melewatkan proses jika
+6. Cron berjalan setiap 5 detik setelah 003 dan pembaruan 002. Pembatas database tetap dapat melewatkan proses jika
    belum cukup jeda, di luar jam, kuota habis, dijeda, atau tidak ada pesan.
 
 Vault mengenkripsi secret saat disimpan; pg_net menggunakan header yang telah
@@ -137,21 +139,13 @@ pada URL atau hasil respons worker.
 
 ### Pilihan B — Scheduler pada VM gateway Anda
 
-Jadwalkan GET ke endpoint yang sama setiap menit, memakai header
+Jadwalkan GET ke endpoint yang sama setiap 5 detik, memakai header
 `Authorization: Bearer CRON_SECRET`. Simpan token pada konfigurasi privat server;
 jangan taruh pada query URL. Tidak perlu mengaktifkan Supabase Cron bila memilih ini.
 
-### Pilihan C — Vercel Cron dengan paket yang mendukung setiap menit
+### Interval lima detik
 
-Tambahkan properti berikut pada `vercel.json` kemudian deploy ulang:
-
-```json
-"crons": [{ "path": "/api/wa-worker", "schedule": "* * * * *" }]
-```
-
-Vercel otomatis mengirim CRON_SECRET sebagai Bearer token. Dokumentasi yang diperiksa
-11 Oktober 2026 menyatakan Vercel Hobby membatasi cron sekali sehari; karena itu
-cron satu menit tidak dimasukkan secara default. Periksa paket/limit akun saat deploy.
+Gunakan Supabase Cron yang mendukung interval detik atau scheduler VM. Scheduler satu menit tidak memenuhi target interval lima detik. Lihat docs/UPGRADE_2.0.1.md untuk syarat versi dan langkah konfigurasi.
 
 ## 8. Google Sites dan layar utama
 

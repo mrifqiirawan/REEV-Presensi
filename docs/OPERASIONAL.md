@@ -81,13 +81,15 @@ Kartu per siswa atau 25 siswa yang tampil dapat dicetak. Pada dialog print gunak
 A4, skala 100%; periksa satu kartu fisik sebelum mencetak banyak. Guru mendapatkan
 hasil hanya setelah server mengonfirmasi penyimpanan. Tidak ada antrean offline.
 
+Pada scanner, ketuk Aktifkan suara sekali. Presensi baru yang berhasil tersimpan membunyikan dua nada dan mengubah kotak HASIL TERAKHIR menjadi hijau.
+
 ## WhatsApp
 
-Default: jeda global 60 detik, 300 percobaan/tanggal lokal, jeda nomor sama 30 menit,
+Setelah migrasi 003: jeda global 5 detik, batas harian lama dipertahankan (default awal 300), jeda nomor sama 0 menit,
 jam 06:00–20:00, kedaluwarsa 12 jam, pengiriman dijeda hingga admin mengaktifkan.
 Batas tersebut aturan aplikasi, bukan jaminan bebas blokir atau kapasitas resmi WA.
 
-PENDING menunggu. SENT diterima gateway. FAILED penolakan HTTP 4xx. UNKNOWN
+PENDING menunggu. SENT diterima gateway. FAILED penolakan HTTP 4xx selain 408. UNKNOWN
 berarti hasil belum pasti, termasuk worker yang terhenti setelah reservasi. EXPIRED
 melewati masa berlaku. CANCELLED adalah pesan backup yang dibatalkan saat restore.
 401/403/429 memblokir antrean sampai admin memeriksa gateway dan membuka blokir.

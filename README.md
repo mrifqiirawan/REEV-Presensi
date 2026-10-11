@@ -1,9 +1,10 @@
-# REEV Presensi 2.0.0 — Vercel + Supabase
+# REEV Presensi 2.0.1 | Vercel + Supabase
 
-Pembangunan ulang aplikasi v1.1.0 untuk database baru. Tidak memerlukan Apps Script,
-Google Sheets, scanner pendamping, atau iframe. Data lama tidak diimpor otomatis.
+**Pengguna versi 2.0.0: mulai dari `docs/UPGRADE_2.0.1.md`. Jalankan migrasi 003, redeploy source, lalu perbarui scheduler 002. Jangan jalankan ulang 001 pada database lama.**
 
-**Mulai dari `docs/PANDUAN_DEPLOY.md`.** ZIP ini adalah source aplikasi, bukan aplikasi
+Versi ini menambah bunyi scan, hasil hijau, alasan antrean spesifik, serta jeda minimum dan scheduler 5 detik. Tidak memerlukan Apps Script atau Google Sheets.
+
+**Instalasi baru: baca `docs/PANDUAN_DEPLOY.md`; jalankan 001 kemudian 003.** ZIP ini adalah source aplikasi, bukan aplikasi
 yang sudah dipublikasikan. Anda memerlukan proyek Supabase dan Vercel sendiri.
 
 ## Yang tersedia
@@ -33,7 +34,8 @@ yang sudah dipublikasikan. Anda memerlukan proyek Supabase dan Vercel sendiri.
 | `api/wa-worker.js` | Fungsi Vercel untuk satu pengiriman antrean |
 | `server/` | Pemeriksaan token/role server dan client service Supabase |
 | `supabase/001_schema.sql` | Skema, constraint, RLS, fungsi transaksi |
-| `supabase/002_optional_scheduler.sql` | Scheduler Supabase Cron opsional |
+| `supabase/002_optional_scheduler.sql` | Scheduler opsional setiap 5 detik |
+| `supabase/003_upgrade_v2_0_1.sql` | Migrasi wajib versi 2.0.1 tanpa menghapus data |
 | `scripts/create-admin.mjs` | Pembuatan admin pertama |
 | `public/templates/` | Template CSV kosong |
 | `tests/` | Pengujian PostgreSQL lokal dan logika aplikasi |
