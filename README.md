@@ -1,6 +1,8 @@
-# REEV Presensi 2.0.2 | Vercel + Supabase
+# REEV Presensi 2.0.3 | Vercel + Supabase
 
-**Mulai dari docs/UPGRADE_2.0.2.md.** Perbaikan reset, template pesan di Pengaturan, pemicu WA otomatis setelah scan, dan audio tanpa tombol khusus.
+**Upgrade dari 2.0.2: baca docs/UPGRADE_2.0.3.md.** Dukungan NISN/WA bertanda petik dan tanggal M/D/YYYY pada impor CSV. Tidak memerlukan migrasi database baru.
+
+Riwayat 2.0.2 — docs/UPGRADE_2.0.2.md: Perbaikan reset, template pesan di Pengaturan, pemicu WA otomatis setelah scan, dan audio tanpa tombol khusus.
 
 ## Yang tersedia
 
